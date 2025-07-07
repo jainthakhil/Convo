@@ -28,9 +28,11 @@ const Sidebar = () => {
      <div
       className="sidebar w-1/4 h-full bg-fixed bg-cover p-6 overflow-y-auto custom-scrollbar">
 
-      <div className="search-box h-10 w-full mb-5 relative flex items-center justify-center backdrop-blur-3xl">
-        <input type="text" className='w-full h-full border-2 border-gray-500 rounded-sm p-2 placeholder-black font-medium' placeholder='Search in chat' />
-        <button className='absolute right-1 h-8 w-8 bg-gray-600 rounded-sm flex items-center justify-center '>
+      <div className="search-box h-10 w-full mb-5 flex items-center justify-center backdrop-blur-3xl border-2 border-gray-500 rounded-sm p-1">
+
+        <input type="text" className='w-full h-full placeholder-black font-medium outline-none focus:outline-none' placeholder='Search in chat ' />
+
+        <button className=' h-full aspect-square bg-gray-600 rounded-sm flex items-center justify-center '>
            <img src="/public/images/search.png" className='h-3/4 cursor-pointer' alt="" />
         </button>
        

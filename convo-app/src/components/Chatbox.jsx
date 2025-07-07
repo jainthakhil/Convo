@@ -69,14 +69,18 @@ const Chatbox = () => {
       </div>
 
       {/* Input at bottom */}
-      <div className=" w-full h-14 bg-white  p-2">
-      <div className="reply-input relative h-full w-full flex items-center jusitfy-center">
+      <div className=" w-full h-14 bg-white p-2">
+
+      <div className="reply-input h-full w-full flex items-center gap-2 pr-2">
+            <button className=' h-3/4'>
+             <img src="/public/images/attach.png" className='h-full cursor-pointer' alt="" />
+        </button>
            <input
           type="text"
           placeholder="Type a message..."
-          className="w-full h-full px-3 rounded-lg border outline-none"
+          className="h-full flex-1 px-3 border outline-none rounded-lg"
         />
-        <button className='absolute top-1/2 right-3 transform -translate-y-1/2 h-3/4'>
+        <button className=' h-3/4'>
              <img src="/public/images/send.png" className='h-full cursor-pointer' alt="" />
         </button>
        
