@@ -16,9 +16,9 @@ const ReplyShape = (prop) => {
   return (
     <div className="reply self-end flex flex-row-reverse  ">
       
-       <img src={prop.img} alt="DP" className='rounded-full h-15 w-15 border-4 border-white backdrop-blur-3xl' />
+       <img src={prop.img} alt="DP" className='rounded-full h-15 w-15 p-1 border-2 border-gray-300 backdrop-blur-3xl m-2' />
 
-      <div className='reply-box text-sm h-max max-w-100 w-fit p-3 text-justify '><p>ReplyShape Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, natus, provident quae voluptatibus .</p> 
+      <div className='reply-box text-sm h-max max-w-100 w-fit p-3 text-justify bg-[#98A1BC] bg-blue-100'><p className=''>ReplyShape Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni, natus, provident quae voluptatibus .</p> 
         <p className="text-xs text-gray-500 block text-right mt-1">{time}</p>
       </div>
       
