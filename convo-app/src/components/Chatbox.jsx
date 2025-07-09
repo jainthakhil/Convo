@@ -56,7 +56,7 @@ const Chatbox = () => {
     //    </div>
     //  </div>
 
-     <div className=" chat-box w-3/4 h-full flex flex-col bg-fixed bg-contain bg-no-repeat">
+     <div className=" chat-box w-3/4 h-full min-w-[400px] flex flex-col bg-fixed bg-contain bg-no-repeat">
       
       {/* Scrollable messages */}
       <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-3">

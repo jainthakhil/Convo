@@ -1,15 +1,30 @@
 import React from 'react'
 
 const ChatItem = (prop) => {
-    return (
-        <div className="chat-item w-full h-20 flex items-center justify-start rounded-md text-gray-800">
-            <img src={prop.img} alt="DP" className='rounded-full h-15 w-15 border-3 p-1 border-white backdrop-blur-3xl' />
+    
+  const timeFun = () => {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
 
-            <div className=' text-md h-max w-fit p-3 text-left'> 
-            <p className='text-lg font-bold'>{prop.name}</p>
+    hours = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
+
+    return `${hours}:${minutes} ${ampm}`;
+  }
+  const time = timeFun();
+
+    return (
+        <div className="chat-item w-full flex items-center justify-start text-gray-800 border-2 border-gray-500 px-2 rounded-4xl  cursor-pointer hover:backdrop-blur-[2px]">
+            <img src={prop.img} alt="DP" className='rounded-full w-12 aspect-square border-3 p-1 border-white backdrop-blur-3xl' />
+            <div className=' text-sm h-max w-fit flex-1 p-3 text-left'> 
+            <p className='font-bold'>{prop.name}</p>
             <p className="last-msg">
                 {prop.lastmsg}
             </p>
+            </div>
+            <div className="time-sec w-12 text-[10px]">
+                <p>{time}</p>
             </div>
 
         </div>
