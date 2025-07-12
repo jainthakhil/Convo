@@ -39,32 +39,14 @@ const App = () => {
   }, [user, navigate]);
 
   return (
-    <div className='app h-screen w-full'>
-      {/* <ForgotPassword/> */}
-      {/* <Login/> */}
-      {/* //formerly overflow-hidden */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path='/:uid' element={<MainChatPage />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-      </Routes>
-      {/* <Sidebar />
-        <Chatbox /> */}
-       <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
-
+    <div className='app h-screen flex overflow-auto'> 
+    <Login/>
+    {/* //formerly overflow-hidden */}
+    {/* <Signup/> */}
+    {/* <Sidebar/>
+    <Chatbox/> */}
+    
+      
     </div>
 
 

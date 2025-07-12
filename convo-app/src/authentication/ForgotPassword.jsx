@@ -10,6 +10,13 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase/firebase"; // adjust path if needed
 import { Link } from "react-router-dom";
 
+import mobileBg from "../assets/images/mobile-bg.png";
+import logo from "../assets/images/convo-logo.png";
+import hand from '../assets/images/hand.png';
+
+import Box from "@mui/material/Box";
+import TextField from '@mui/material/TextField';
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
 
