@@ -19,31 +19,31 @@ const Signup = () => {
           <img src={logo} alt="logo convo" />
         </div>
 
-        <div className="mt-6 relative w-fit items-center justify-center mx-auto">
+        <div className="mt-4 relative w-fit items-center justify-center mx-auto">
           <img src={hand} alt="hand img" className="absolute -top-7 -left-9 z-10 w-16"/>
           <Box
             component="section"
-            sx={{ p: 1, border: "4px solid black" }}
-            className="bg-yellow-300 w-65 rounded-lg flex flex-col shadow-lg relative z-0"
+            sx={{ border: "4px solid black" }}
+            className="bg-yellow-300 p-1 md:p-2 md:w-95 w-65 rounded-lg flex flex-col shadow-lg relative z-0"
           >
             <h1 className="font-bold font-akaya text-center">Welcome to Convo! Enter your details to get started.</h1>
           </Box>
         </div>
 
-        <div className="mt-4 flex flex-col items-center justify-center">
+        <div className="mt-2 flex flex-col items-center justify-center">
           <Box
             component="section"
-            sx={{ p: 1, border: "4px solid black" }}
-            className="w-65 bg-white rounded-lg flex flex-col items-center justify-center shadow-lg"
+            sx={{ border: "4px solid black" }}
+            className="p-1 md:p-2 w-65 md:w-95 bg-white rounded-lg flex flex-col items-center"
           >
-          <form action="" className="flex flex-col mt-0 gap-2 w-60">
+          <form action="" className="flex flex-col mb-2 gap-2 w-60 md:w-85">
             <TextField id="standard-basic" label="Enter your name" variant="standard" />
             <TextField id="standard-basic" label="Enter your email" variant="standard" />
             <TextField id="standard-basic" label="Enter your password" variant="standard" />
           </form>
           </Box>
-          <button className="text-white px-8 py-2 mt-4 rounded-3xl border-3 border-black font-semibold bg-[linear-gradient(to_right,_#2A7B9B_0%,_#57C785_50%,_#EDDD53_100%)] hover:opacity-90 transition">Submit</button>
-          <p className="text-white text-sm mt-2">Already have an account? <a href="/">Login</a></p>
+          <button className="text-white px-8 py-2 mt-4 rounded-3xl md:border-4 border-3 border-black font-semibold bg-[linear-gradient(to_right,_#2A7B9B_0%,_#57C785_50%,_#EDDD53_100%)] hover:opacity-90 transition">Submit</button>
+          <p className="text-white text-sm md:text-base mt-2">Already have an account? <a href="/" className="underline">Login</a></p>
         </div>
       </div>
     </>
