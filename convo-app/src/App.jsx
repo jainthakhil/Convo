@@ -42,7 +42,7 @@ const App = () => {
     <div className='app h-screen flex overflow-auto'> 
     <Login/>
     {/* //formerly overflow-hidden */}
-    {/* <Signup/> */}
+    <Signup/>
     {/* <Sidebar/>
     <Chatbox/> */}
     
