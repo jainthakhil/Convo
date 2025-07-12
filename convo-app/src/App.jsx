@@ -7,14 +7,14 @@ import './index.css'
 // import Chatbox from './components/Chatbox'
 // import Sidebar from './components/Sidebar'
 // import Signup from './authentication/Signup'
-// import Login from './authentication/Login'
-import ForgotPassword from './authentication/ForgotPassword'
+import Login from './authentication/Login'
+// import ForgotPassword from './authentication/ForgotPassword'
 
 const App = () => {
   return (
     <div className='app h-screen flex overflow-auto'> 
-    <ForgotPassword/>
-    {/* <Login/> */}
+    {/* <ForgotPassword/> */}
+    <Login/>
     {/* //formerly overflow-hidden */}
     {/* <Signup/> */}
     {/* <Sidebar/>
