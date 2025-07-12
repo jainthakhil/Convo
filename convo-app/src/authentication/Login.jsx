@@ -1,11 +1,11 @@
 import React from 'react'
 
-const login = () => {
+const Login = () => {
   return (
-    <div>
-      
+    <div className='bg-black h-screen w-screen flex items-center justify-center'>
+      <h1 className='bg-white'>Hello</h1>
     </div>
   )
 }
 
-export default login
+export default Login
