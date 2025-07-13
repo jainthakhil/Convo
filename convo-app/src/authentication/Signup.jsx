@@ -27,8 +27,6 @@ const Signup = () => {
               alt="hand img"
               className="absolute -top-7 -left-9 z-10 w-16"
             />
-            <>lorem32
-            </>
             <Box
               component="section"
               sx={{ border: "4px solid black" }}
