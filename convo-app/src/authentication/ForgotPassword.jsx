@@ -3,6 +3,7 @@ import React from "react";
 import mobileBg from "../assets/images/mobile-bg.png";
 import logo from "../assets/images/convo-logo.png";
 import hand from "../assets/images/hand.png";
+import forgotImg from "../assets/images/forgot-img.png";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
