@@ -9,7 +9,7 @@
 
 
 .msg-box{
-  /* background-color: white; */
+  background-color: lightgray;
   /* border: 2px solid black; */
   border-radius: 0.25rem 2rem 2rem 2rem;
  
@@ -22,7 +22,6 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal; */
-
    font-family: "Inter", sans-serif;
   /* font-optical-sizing: auto; */
   font-weight: 400;
@@ -54,7 +53,8 @@
 }
 
 .sidebar{
-   background-image: url("../images/sidebarbg.jpg");
+   /* background-image: url("../images/sidebarbg.jpg"); */
+   background-color: lightgray;
     /* background-size:cover; */ 
   /* background-repeat: no-repeat; */
   /* background-clip: fixed; */

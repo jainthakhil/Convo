@@ -1,9 +1,7 @@
 
 import React from 'react'
-import MessageShape from './components/MessageShape'
 import './App.css'
 import './index.css'
-import ReplyShape from './components/ReplyShape'
 import Chatbox from './components/Chatbox'
 import Sidebar from './components/Sidebar'
 
@@ -14,8 +12,6 @@ const App = () => {
     {/* //formerly overflow-hidden */}
     <Sidebar/>
     <Chatbox/>
-    
-      
     </div>
   )
 }
