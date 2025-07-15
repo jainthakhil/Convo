@@ -20,7 +20,7 @@ const ChatItem = (prop) => {
             {/* <img src={prop.img} alt="DP" className='rounded-full w-12 aspect-square border-3 p-1 border-white backdrop-blur-3xl' /> */}
             <ProfilePicture 
                 img={prop.img}
-                size={'h-8 w-8'}
+                // size={'h-8 w-8'}
                 border="border-gray-500"
             />
 

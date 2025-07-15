@@ -20,7 +20,7 @@ const MessageBox = (prop) => {
       {/* <img src={prop.img} alt="DP" className='rounded-full h-15 w-15 p-1 border-2 border-gray-300 backdrop-blur-3xl m-2' /> */}
       <ProfilePicture
         img={prop.img}
-        size="w-8 h-8"
+        // size="w-8 h-8"
         border="border-gray-400"
        />
 

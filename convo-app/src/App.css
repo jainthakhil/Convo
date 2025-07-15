@@ -5,8 +5,12 @@
   /* margin: 0 auto; */
   /* padding: 2rem; */
   text-align: center;
+  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Playpen Sans Hebrew", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; */
 }
-
 
 .msg-box{
   background-color: lightgray;
@@ -52,9 +56,11 @@
 
 }
 
-.sidebar{
+.sidebar-cont{
    /* background-image: url("../images/sidebarbg.jpg"); */
    background-color: lightgray;
+   background-color: #B9B1F6;
+   background-color: #78B9B5;
     /* background-size:cover; */ 
   /* background-repeat: no-repeat; */
   /* background-clip: fixed; */
@@ -70,8 +76,8 @@
 .chat-input{
     border-radius: 2rem 0.25rem 2rem 2rem;
 }
-
-.chat-item{
-
+.chat-header{
+     background-color: #B9B1F6;
+     background-color: #78B9B5;
 
 }

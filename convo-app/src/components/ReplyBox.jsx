@@ -25,7 +25,7 @@ const ReplyBox = (prop) => {
       </div>
        <ProfilePicture
         img={prop.img}
-        size="w-8 h-8"
+        // size="w-8 h-8"
         border="border-blue-400"
        />
       

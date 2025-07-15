@@ -5,63 +5,21 @@ import maleDp from '../assets/images/man.png'
 import femaleDp from '../assets/images/woman.png'
 import ShareFileBtn from './ShareFileBtn'
 import SendMsgBtn from './SendMsgBtn'
+import ProfilePicture from './ProfilePicture'
+import ChatHeader from './ChatHeader'
 
 const Chatbox = () => {
   return (
-    // <div className='fixed inset-0 flex justify-end'>
-    //   <div className=" chat-box h-full w-3/4 flex pt-10 ">
-    //     <div className="flex-1 overflow-y-auto p-4 space-y-3 flex flex-col">
-    // <div className="w-3/4 h-full overflow-y-scroll">
-    //   <div className="chat-box h-full w-full overflow-y-scroll ">
-
-    //     <div className="h-full w-full flex flex-col gap-2 p-4 ">
-    //       <MessageShape
-    //         img={femaleDp}
-    //       />
-    //       <ReplyShape
-    //         img={maleDp}
-    //       />
-
-    //       <MessageShape
-    //         img={femaleDp}
-    //       />
-    //       <ReplyShape
-    //         img={maleDp}
-    //       />
-    //       <MessageShape
-    //         img={femaleDp}
-    //       />
-    //       <ReplyShape
-    //         img={maleDp}
-    //       />
-
-    //       <MessageShape
-    //         img={femaleDp}
-    //       />
-    //       <ReplyShape
-    //         img={maleDp}
-    //       />
-
-    //       <MessageShape
-    //         img={femaleDp}
-    //       />
-    //       <ReplyShape
-    //         img={maleDp}
-    //       />
-    //     </div>
-    //     <div className="chat-input w-full h-10 fixed bottom-0 right-5 bg-white rounded-lg border-4">
-    //       <input type="text" placeholder='Message' />
-    //     </div>
-    //   </div>
-    // </div>
-    /* </div> */
-    //    </div>
-    //  </div>
 
     <div className=" chat-box w-3/4 h-full min-w-[400px] flex flex-col bg-fixed bg-contain bg-no-repeat">
+      
+      <ChatHeader 
+        img ={maleDp}
+      />
 
       {/* Scrollable messages */}
-      <div className="flex flex-col overflow-y-auto custom-scrollbar p-4 space-y-3 text-end">
+      <div className="flex w-full flex-col overflow-y-auto custom-scrollbar p-4 space-y-3">
+
         {[...Array(8)].map((_, i) => (
           <React.Fragment key={i}>
             <MessageBox img={femaleDp} />
