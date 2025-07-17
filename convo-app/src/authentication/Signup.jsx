@@ -12,16 +12,17 @@ import TextField from "@mui/material/TextField";
 const Signup = () => {
   return (
     <>
-      <div className="w-screen h-screen bg-fixed bg-cover bg-center" style={{ backgroundImage: `url(${laptopBg})` }}>
+      <div className="w-screen h-screen bg-cover bg-center flex items-center justify-center px-4" style={{ backgroundImage: `url(${laptopBg})` }}>
         <div
-          className="bg-fixed bg-cover bg-center h-[80%] w-[80%] rounded-xl shadow-2xl border-2 border-white flex flex-col items-center justify-start overflow-y-auto"
+          className="bg-fixed bg-cover bg-center h-[80%] w-[80%] rounded-xl shadow-2xl border-none flex flex-col items-center justify-center"
           style={{ backgroundImage: `url(${mobileBg})` }}
         >
-          <div className="flex items-center justify-center mt-4">
+          {/* inner container */}
+          <div className="flex w-full items-center justify-center mt-4 lg:hidden">
             <img src={logo} alt="logo convo" />
           </div>
 
-          <div className="mt-4 relative w-fit items-center justify-center mx-auto">
+          <div className="mt-4 relative w-fit items-center justify-start mx-auto">
             <img
               src={hand}
               alt="hand img"
@@ -30,7 +31,7 @@ const Signup = () => {
             <Box
               component="section"
               sx={{ border: "4px solid black" }}
-              className="bg-yellow-300 p-1 md:p-2 md:w-95 w-65 rounded-lg flex flex-col shadow-lg relative z-0"
+              className="bg-yellow-300 p-1 md:p-2 lg:p-1 md:w-95 w-65 rounded-lg flex flex-col shadow-lg relative z-0"
             >
               <h1 className="font-bold font-akaya text-center">
                 Welcome to Convo! Enter your details to get started.
