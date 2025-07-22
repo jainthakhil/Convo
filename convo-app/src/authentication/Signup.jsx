@@ -17,7 +17,7 @@ const Signup = () => {
     >
       <div className="flex flex-col md:flex-row w-[90%] md:w-[70%] h-[90%] rounded-3xl overflow-hidden shadow-2xl" style={{ backgroundImage: `url(${laptopBg})` }}>
         {/* Left Side - Image */}
-        <div className="bg-yellow-200 flex items-center justify-center p-4 w-full md:w-1/2">
+        <div className="hidden md:flex bg-yellow-200 items-center justify-center p-4 w-full md:w-1/2">
           <img src={signupImg} alt="signup character" className="w-full max-w-sm" />
         </div>
 
