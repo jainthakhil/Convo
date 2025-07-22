@@ -4,7 +4,7 @@ import mobileBg from "../assets/images/mobile-bg.png";
 import logo from "../assets/images/convo-logo.png";
 import hand from "../assets/images/hand.png";
 import signupImg from "../assets/images/signup-img.png";
-import laptopBg from '../assets/images/laptop-bg.png'
+import laptopBg from '../assets/images/laptop-bg.png';
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
