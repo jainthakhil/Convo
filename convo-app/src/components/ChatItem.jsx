@@ -1,4 +1,5 @@
 import React from 'react'
+import ProfilePicture from './ProfilePicture';
 
 const ChatItem = (prop) => {
     
@@ -15,15 +16,21 @@ const ChatItem = (prop) => {
   const time = timeFun();
 
     return (
-        <div className="chat-item w-full flex items-center justify-start text-gray-800 border-2 border-gray-500 px-2 rounded-4xl  cursor-pointer hover:backdrop-blur-[2px]">
-            <img src={prop.img} alt="DP" className='rounded-full w-12 aspect-square border-3 p-1 border-white backdrop-blur-3xl' />
+        <div className="chat-item w-full flex items-center justify-center text-gray-800 border-1 border-gray-500 rounded-4xl cursor-pointer hover:backdrop-blur-[2px]">
+            {/* <img src={prop.img} alt="DP" className='rounded-full w-12 aspect-square border-3 p-1 border-white backdrop-blur-3xl' /> */}
+            <ProfilePicture 
+                img={prop.img}
+                // size={'h-8 w-8'}
+                border="border-gray-500"
+            />
+
             <div className=' text-sm h-max w-fit flex-1 p-3 text-left'> 
             <p className='font-bold'>{prop.name}</p>
             <p className="last-msg">
                 {prop.lastmsg}
             </p>
             </div>
-            <div className="time-sec w-12 text-[10px]">
+            <div className="time-sec w-fit p-2 text-[10px]">
                 <p>{time}</p>
             </div>
 

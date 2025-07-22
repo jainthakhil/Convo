@@ -12,11 +12,11 @@ const Login = () => {
   return (
     <>
       <div
-        className="bg-fixed bg-cover bg-center h-screen w-screen"
+        className=" login bg-fixed bg-cover bg-center h-screen w-screen"
         style={{ backgroundImage: `url(${mobileBg})` }}
       >
 
-        <div className="flex items-center justify-center mt-4">
+        <div className="flex items-center justify-center pt-4">
           <img src={logo} alt="logo convo" />
         </div>
 
@@ -35,7 +35,7 @@ const Login = () => {
           <Box
             component="section"
             sx={{border: "4px solid black" }}
-            className="p-1 md:p-2 w-65 md:w-95 bg-white rounded-lg flex flex-col items-center"
+            className="p-1 md:p-2 w-65 md:w-95 bg-white rounded-lg flex flex-col items-center reply-box"
           >
           <form action="" className="flex flex-col mb-2 gap-2 w-60 md:w-85">
             <TextField id="standard-basic" label="Enter your email" variant="standard" />
