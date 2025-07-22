@@ -1,15 +1,52 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import mobileBg from "../assets/images/mobile-bg.png";
 import logo from "../assets/images/convo-logo.png";
 import hand from "../assets/images/hand.png";
 import signupImg from "../assets/images/signup-img.png";
 import laptopBg from '../assets/images/laptop-bg.png'
-
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/features/userSlice";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { signupEmailPass, updateUserName, onAuthStateChange } from "../firebase/firebase";
+
 const Signup = () => {
+  const dispatch = useDispatch();
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+
+  const handlePassChange = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const handleSubmit = async () => {
+    try {
+      const userCredential = await signupEmailPass(email, password);
+      updateUserName(name);
+      dispatch(setUser({
+        uid: userCredential.user.uid,
+        email: userCredential.user.email,
+        displayName: userCredential.user.displayName,
+        photoURL: userCredential.user.photoURL
+      }));
+      console.log('User signed up:', userCredential);
+    } catch (error) {
+      console.error('Signup error:', error.message);
+    }
+
+  }
+
   return (
     <>
       <div className="w-screen h-screen bg-fixed bg-cover bg-center" style={{ backgroundImage: `url(${laptopBg})` }}>
@@ -49,25 +86,34 @@ const Signup = () => {
                   id="standard-basic"
                   label="Enter your name"
                   variant="standard"
+                  value={name}
+                  onChange={handleNameChange}
+                  name="name"
                 />
                 <TextField
                   id="standard-basic"
                   label="Enter your email"
                   variant="standard"
+                  value={email}
+                  onChange={handleEmailChange}
+                  name="email"
                 />
                 <TextField
                   id="standard-basic"
                   label="Enter your password"
                   variant="standard"
+                  value={password}
+                  onChange={handlePassChange}
+                  name="password"
                 />
               </form>
             </Box>
-            <button className="text-white px-8 py-2 mt-4 rounded-3xl md:border-4 border-3 border-black font-semibold bg-[linear-gradient(to_right,_#2A7B9B_0%,_#57C785_50%,_#EDDD53_100%)] hover:opacity-90 transition">
+            <button className="text-white px-8 py-2 mt-4 rounded-3xl md:border-4 border-3 border-black font-semibold bg-[linear-gradient(to_right,_#2A7B9B_0%,_#57C785_50%,_#EDDD53_100%)] hover:opacity-90 transition" onClick={handleSubmit}>
               Submit
             </button>
             <p className="text-white text-sm md:text-base mt-2">
               Already have an account?{" "}
-              <a href="/" className="underline">
+              <a href="/signin" className="underline">
                 Login
               </a>
             </p>
