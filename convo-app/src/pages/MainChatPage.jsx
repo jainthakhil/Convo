@@ -12,7 +12,7 @@ const MainChatPage = () => {
             {/* Chat Layout */}
             <div className="flex flex-1 overflow-hidden">
                 {/* Sidebar */}
-                <aside className="w-1/4 min-w-[300px] bg-gray-900 text-white border-r overflow-y-auto">
+                <aside className=" min-w-[300px] bg-gray-900 text-white border-r overflow-y-auto">
                     <Sidebar />
                 </aside>
 

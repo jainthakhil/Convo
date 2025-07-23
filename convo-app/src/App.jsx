@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,44 +11,60 @@ import './App.css'
 import './index.css'
 import Chatbox from './components/Chatbox'
 import Sidebar from './components/Sidebar'
-import MainChatPage from './components/MainChatPage';
+import MainChatPage from './pages/MainChatPage';
 import Home from './pages/Home';
 import Login from './authentication/Login';
 import Signup from './authentication/Signup'
 
-import { logOut } from './firebase/firebase';
 import { useSelector } from 'react-redux';
-import MainChatPage from './components/MainChatPage';
-
-
 
 const App = () => {
-  const user = useSelector((state) => state.user.user);
-  return (
-    <Router>
-      <div className='app h-screen w-full'>
-        {/* <ForgotPassword/> */}
-        {/* <Login/> */}
-        {/* //formerly overflow-hidden */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path='/:uid' element={<MainChatPage />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
-        </Routes>
-        <a href="/">HOME </a>
-        <a href="/signin"> LOGIN </a>
-        <a href="/signup">SIGNUP</a>
+  const navigate = useNavigate();
 
-        <button onClick={logOut}>LOGOUT</button>
-        {/* <Sidebar />
+  const user = useSelector((state) => state.user.user); // Get entire user object
+
+  useEffect(() => {
+    if (user && user.uid) {
+      navigate()
+      navigate(`/${user.uid}`);
+    }
+    // if (!user) {
+    //   navigate('/signin'); // Redirect to login if not authenticated
+    // } else {
+    //   navigate(`/${user.uid}`); // Redirect to main chat page if logged in
+    // }
+  }, [user, navigate]);
+
+  return (
+
+
+
+
+
+
+
+
+    <div className='app h-screen w-full'>
+      {/* <ForgotPassword/> */}
+      {/* <Login/> */}
+      {/* //formerly overflow-hidden */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path='/:uid' element={<MainChatPage />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+
+
+
+      {/* <Sidebar />
         <Chatbox /> */}
 
 
-      </div>
+    </div>
 
-    </Router>
+
 
   )
 }

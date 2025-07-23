@@ -11,7 +11,7 @@ import ChatHeader from './ChatHeader'
 const Chatbox = () => {
   return (
 
-    <main className=" chat-box w-3/4 h-full min-w-[400px] flex flex-col bg-fixed bg-contain bg-no-repeat">
+    <main className=" chat-box w-full h-full min-w-[400px] flex flex-col bg-fixed bg-contain bg-no-repeat">
 
       <ChatHeader
         img={maleDp}
