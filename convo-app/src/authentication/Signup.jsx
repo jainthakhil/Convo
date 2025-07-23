@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../redux/features/userSlice";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { signupEmailPass, updateUserName, onAuthStateChange } from "../firebase/firebase";
+import Form from "../components/TestComp";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const Signup = () => {
   const handleSubmit = async () => {
     try {
       const userCredential = await signupEmailPass(email, password);
-      updateUserName(name);
+      await updateUserName(name);
       dispatch(setUser({
         uid: userCredential.user.uid,
         email: userCredential.user.email,
@@ -48,79 +49,88 @@ const Signup = () => {
   }
 
   return (
-    <>
-      <div className="w-screen h-screen bg-fixed bg-cover bg-center" style={{ backgroundImage: `url(${laptopBg})` }}>
-        <div
-          className="bg-fixed bg-cover bg-center h-[80%] w-[80%] rounded-xl shadow-2xl border-2 border-white flex flex-col items-center justify-start overflow-y-auto"
-          style={{ backgroundImage: `url(${mobileBg})` }}
-        >
-          <div className="flex items-center justify-center mt-4">
-            <img src={logo} alt="logo convo" />
-          </div>
+    <main
+      className="w-screen h-screen bg-cover bg-center flex items-center justify-center"
+      style={{ backgroundImage: `url(${laptopBg})` }}
+    >
+      <section
+        className="flex flex-col md:flex-row w-screen md:w-[85%] md:h-[85%] justify-center align-center h-screen rounded-xl overflow-hidden shadow-2xl"
+        style={{ backgroundImage: `url(${laptopBg})` }}
+      >
+        {/* Left Side - Illustration */}
+        <aside className="hidden md:flex bg-yellow-200 items-center justify-center p-4 w-full md:w-1/2">
+          <img src={signupImg} alt="Signup character" className="w-full max-w-sm" />
+        </aside>
 
-          <div className="mt-4 relative w-fit items-center justify-center mx-auto">
-            <img
-              src={hand}
-              alt="hand img"
-              className="absolute -top-7 -left-9 z-10 w-16"
-            />
-            <Box
-              component="section"
-              sx={{ border: "4px solid black" }}
-              className="bg-yellow-300 p-1 md:p-2 md:w-95 w-65 rounded-lg flex flex-col shadow-lg relative z-0"
+        {/* Right Side - Signup Form */}
+        <section className="relative flex flex-col items-center justify-center bg-[url('../assets/images/mobile-bg.png')] bg-cover bg-center w-full md:w-1/2 p-4 md:p-8 border-4">
+
+          {/* Header */}
+          <header className="relative mb-4 w-9/10">
+            <img src={hand} alt="Waving hand" className="absolute -top-6 -left-7 w-12 z-10" />
+            <div
+              className="bg-yellow-300 px-4 py-2 rounded-lg shadow-lg z-0 border-2"
             >
-              <h1 className="font-bold font-akaya text-center">
-                Welcome to Convo! Enter your details to get started.
+              <h1 className="font-bold font-akaya text-center text-sm md:text-base">
+                Heyy! Enter below your details to signup
               </h1>
-            </Box>
-          </div>
+            </div>
+          </header>
 
-          <div className="mt-2 flex flex-col items-center justify-center">
-            <Box
-              component="section"
-              sx={{ border: "4px solid black" }}
-              className="p-1 md:p-2 w-65 md:w-95 bg-white rounded-lg flex flex-col items-center"
+          {/* Form Section */}
+          <section className="mt-2 flex flex-col items-center justify-center w-9/10 ">
+            <form
+              className="w-full flex flex-col mb-2 gap-2 p-1  bg-white rounded-lg items-center "
+
             >
-              <form action="" className="flex flex-col mb-2 gap-2 w-60 md:w-85">
-                <TextField
-                  id="standard-basic"
-                  label="Enter your name"
-                  variant="standard"
-                  value={name}
-                  onChange={handleNameChange}
-                  name="name"
-                />
-                <TextField
-                  id="standard-basic"
-                  label="Enter your email"
-                  variant="standard"
-                  value={email}
-                  onChange={handleEmailChange}
-                  name="email"
-                />
-                <TextField
-                  id="standard-basic"
-                  label="Enter your password"
-                  variant="standard"
-                  value={password}
-                  onChange={handlePassChange}
-                  name="password"
-                />
-              </form>
-            </Box>
-            <button className="text-white px-8 py-2 mt-4 rounded-3xl md:border-4 border-3 border-black font-semibold bg-[linear-gradient(to_right,_#2A7B9B_0%,_#57C785_50%,_#EDDD53_100%)] hover:opacity-90 transition" onClick={handleSubmit}>
+              <TextField
+                id="name"
+                label="Enter your name"
+                variant="standard"
+                value={name}
+                onChange={handleNameChange}
+                name="name"
+
+              />
+              <TextField
+                id="email"
+                label="Enter your email"
+                variant="standard"
+                value={email}
+                onChange={handleEmailChange}
+                name="email"
+              />
+              <TextField
+                id="password"
+                label="Enter your password"
+                variant="standard"
+                value={password}
+                onChange={handlePassChange}
+                name="password"
+              />
+            </form>
+            <button
+              onClick={handleSubmit}
+              className="text-white px-8 py-2 mt-4 rounded-3xl  font-semibold bg-[linear-gradient(to_right,_#2A7B9B_0%,_#57C785_50%,_#EDDD53_100%)] hover:opacity-90 transition cursor-pointer"
+            >
               Submit
             </button>
+
             <p className="text-white text-sm md:text-base mt-2">
               Already have an account?{" "}
               <a href="/signin" className="underline">
                 Login
               </a>
             </p>
-          </div>
-        </div>
-      </div>
-    </>
+          </section>
+
+          {/* <Form /> */}
+
+
+        </section>
+      </section>
+    </main>
+
   );
 };
 

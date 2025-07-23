@@ -53,9 +53,9 @@ export const signupEmailPass = async (email, password) => {
 export const updateUserName = async (name) => {
   await updateProfile(auth.currentUser, {
     displayName: name,
-  }).then(() => {
+  }).then((data) => {
     // Profile updated!
-    console.log("username updated")
+    console.log(data, "username updated")
     // ...
   }).catch((error) => {
     // An error occurred

@@ -33,6 +33,7 @@ const App = () => {
     // } else {
     //   navigate(`/${user.uid}`); // Redirect to main chat page if logged in
     // }
+    console.log(user)
   }, [user, navigate]);
 
   return (
@@ -55,7 +56,6 @@ const App = () => {
         <Route path='/:uid' element={<MainChatPage />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-
 
 
       {/* <Sidebar />
