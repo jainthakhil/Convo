@@ -15,8 +15,12 @@ import MainChatPage from './components/MainChatPage';
 import Home from './pages/Home';
 import Login from './authentication/Login';
 import Signup from './authentication/Signup'
+
 import { logOut } from './firebase/firebase';
 import { useSelector } from 'react-redux';
+import MainChatPage from './components/MainChatPage';
+
+
 
 const App = () => {
   const user = useSelector((state) => state.user.user);
