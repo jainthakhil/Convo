@@ -14,6 +14,7 @@ import Sidebar from './components/Sidebar'
 import Home from './pages/Home';
 import Login from './authentication/Login';
 import Signup from './authentication/Signup'
+import MainChatPage from './components/MainChatPage';
 
 
 const App = () => {
@@ -25,13 +26,14 @@ const App = () => {
         {/* //formerly overflow-hidden */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<Login/>}/>
-          <Route path="/signup" element={<Signup/>} />
+          <Route path="/signin" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/:uid" element={<MainChatPage />} />
         </Routes>
         <a href="/">HOME </a>
-         <a href="/signin"> LOGIN </a>
-          <a href="/signup">SIGNUP</a>
+        <a href="/signin"> LOGIN </a>
+        <a href="/signup">SIGNUP</a>
         {/* <Sidebar />
         <Chatbox /> */}
 
