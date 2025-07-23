@@ -76,11 +76,11 @@ const Signup = () => {
             </Box>
           </div>
 
-          <div className="md:w-fit mt-2 flex flex-col items-center justify-center">
+          <div className="mt-2 flex flex-col items-center justify-center">
             <Box
               component="section"
               sx={{ border: "4px solid black" }}
-              className="p-1 md:p-2 w-65 md:w-95 bg-white rounded-lg flex flex-col items-center"
+              className="p-1 md:p-2 w-65 md:w-75 bg-white rounded-lg flex flex-col items-center"
             >
               <form action="" className="flex flex-col mb-2 gap-2 w-60 md:w-85">
                 <TextField
