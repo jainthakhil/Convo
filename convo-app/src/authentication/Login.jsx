@@ -25,18 +25,20 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       const userCredential = await signinWithEmailPass(email, password);
-      dispatch(setUser({
-        uid: userCredential.user.uid,
-        email: userCredential.user.email,
-        displayName: userCredential.user.displayName,
-        photoURL: userCredential.user.photoURL
-      }));
+      if (userCredential) {
+        dispatch(setUser({
+          uid: userCredential.user.uid,
+          email: userCredential.user.email,
+          displayName: userCredential.user.displayName,
+          photoURL: userCredential.user.photoURL
+        }));
+      }
+
       console.log(userCredential);
     }
     catch (error) {
       console.log(error);
     }
-
   }
   return (
     <>
