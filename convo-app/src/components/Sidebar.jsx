@@ -1,18 +1,20 @@
 import React from 'react'
 import ChatItem from './ChatItem'
 import maleDP from '../assets/images/man.png'
+import Navbar from './Navbar'
 
 const Sidebar = () => {
   return (
 
-    <div className="sidebar-cont w-1/4 h-full min-w-[350px] flex flex-col items-center">
+    <aside className="sidebar-cont w-1/4 h-full min-w-[350px] flex flex-col items-center">
 
-    <div className="logo-sec h-10 w-full flex items-center justify-start p-4">
-    <h2 className='text-white font-bold '>CONVO</h2>
+      {/* <header className="logo-sec h-10 w-full flex items-center justify-start p-4">
+        <h2 className='text-white font-bold '>CONVO</h2>
 
-    </div>
+      </header> */}
+      {/* <Navbar /> */}
 
-      <div className="search-box h-15 w-full flex items-center bg-fixed z-10 p-4">
+      <section className="search-box h-15 w-full flex items-center bg-fixed z-10 p-4">
 
         <input type="text" className=' flex-1 h-10 placeholder-gray font-xs outline-none focus:outline-none backdrop-blur-3xl border-1 border-gray-500 rounded-tl-md rounded-bl-md p-2' placeholder='Search in chat ' />
 
@@ -20,20 +22,20 @@ const Sidebar = () => {
           <img src="/images/search.png" className='h-1/2 cursor-pointer hover:scale-[1.1] transition-all ease-in-out' alt="" />
         </button>
 
-      </div>
+      </section>
 
       {/* <div
         className="sidebar custom-scrollbar overflow-y-auto "> */}
 
-        <div className=" w-full flex-1 flex-col overflow-y-auto custom-scrollbar p-4 space-y-3 ">
-          {[...Array(15)].map((_, i) => (
-            <div key={i} className="chat-option w-full h-max my-2">
-              <ChatItem img={maleDP} name={`Akhil ${i + 1}`} lastmsg={"Good morning"} />
-            </div>
-          ))}
+      <div className=" w-full flex-1 flex-col overflow-y-auto custom-scrollbar p-4 space-y-3 ">
+        {[...Array(15)].map((_, i) => (
+          <div key={i} className="chat-option w-full h-max my-2">
+            <ChatItem img={maleDP} name={`Akhil ${i + 1}`} lastmsg={"Good morning"} />
+          </div>
+        ))}
         {/* </div> */}
       </div>
-    </div>
+    </aside>
   )
 }
 

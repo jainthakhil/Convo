@@ -11,14 +11,15 @@ import ChatHeader from './ChatHeader'
 const Chatbox = () => {
   return (
 
-    <div className=" chat-box w-3/4 h-full min-w-[400px] flex flex-col bg-fixed bg-contain bg-no-repeat">
-      
-      <ChatHeader 
-        img ={maleDp}
+    <main className=" chat-box w-full h-full min-w-[400px] flex flex-col bg-fixed bg-contain bg-no-repeat">
+
+      <ChatHeader
+        img={maleDp}
+        name={"Akhil"}
       />
 
       {/* Scrollable messages */}
-      <div className="flex w-full flex-col overflow-y-auto custom-scrollbar p-4 space-y-3">
+      <section className="flex w-full flex-col overflow-y-auto custom-scrollbar p-4 space-y-3">
 
         {[...Array(8)].map((_, i) => (
           <React.Fragment key={i}>
@@ -26,10 +27,10 @@ const Chatbox = () => {
             <ReplyBox img={maleDp} />
           </React.Fragment>
         ))}
-      </div>
+      </section>
 
       {/* Input at bottom */}
-      <div className=" w-full h-14 bg-white p-2">
+      <section className=" w-full h-14 bg-white p-2">
 
         <div className="reply-input h-full w-full flex items-center gap-2 pr-2">
           <ShareFileBtn />
@@ -49,8 +50,8 @@ const Chatbox = () => {
 
         </div>
 
-      </div>
-    </div>
+      </section>
+    </main>
   )
 }
 

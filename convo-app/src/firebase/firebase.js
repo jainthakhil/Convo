@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, GoogleAuthProvider, updateProfile, signOut } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,7 +30,7 @@ export const onAuthStateChange = onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
-    console.log("user is present")
+    console.log("user is present", uid)
     return user
     // ...
   } else {
@@ -52,9 +53,9 @@ export const signupEmailPass = async (email, password) => {
 export const updateUserName = async (name) => {
   await updateProfile(auth.currentUser, {
     displayName: name,
-  }).then(() => {
+  }).then((data) => {
     // Profile updated!
-    console.log("username updated")
+    console.log(data, "username updated")
     // ...
   }).catch((error) => {
     // An error occurred
@@ -83,3 +84,11 @@ export const signinWithEmailPass = async (email, password) => {
   //   const errorMessage = error.message;
   // });
 }
+
+export const logOut = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error("Logout error:", error.message);
+  }
+};

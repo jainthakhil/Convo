@@ -5,13 +5,14 @@ import hand from '../assets/images/hand.png';
 import loginImg from '../assets/images/login-img.png';
 import Box from "@mui/material/Box";
 import TextField from '@mui/material/TextField';
-
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/features/userSlice';
 import { signinWithEmailPass } from '../firebase/firebase';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -25,13 +26,16 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       const userCredential = await signinWithEmailPass(email, password);
-      dispatch(setUser({
-        uid: userCredential.user.uid,
-        email: userCredential.user.email,
-        displayName: userCredential.user.displayName,
-        photoURL: userCredential.user.photoURL
-      }));
+      if (userCredential)
+        dispatch(setUser({
+          uid: userCredential.user.uid,
+          email: userCredential.user.email,
+          displayName: userCredential.user.displayName,
+          photoURL: userCredential.user.photoURL
+        }));
       console.log(userCredential);
+      navigate(`/:${userCredential.user.uid}`)
+
     }
     catch (error) {
       console.log(error);

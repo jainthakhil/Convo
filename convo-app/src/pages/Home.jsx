@@ -4,9 +4,10 @@ import Chatbox from '../components/Chatbox'
 
 const Home = () => {
   return (
-    <div className='h-screen w-full flex overflow-auto'>
-        <Sidebar/>
-        <Chatbox/>
+    <div className='h-screen w-full flex'>
+      <a href="/">HOME </a> <br />
+      <a href="/signin"> LOGIN </a> <br />
+      <a href="/signup">SIGNUP</a>
     </div>
   )
 }
