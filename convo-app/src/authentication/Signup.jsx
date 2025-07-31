@@ -62,7 +62,7 @@ const Signup = () => {
         </aside>
 
         {/* Right Side - Signup Form */}
-        <section className="relative flex flex-col items-center justify-center bg-[url('../assets/images/mobile-bg.png')] bg-cover bg-center w-full md:w-1/2 p-4 md:p-8 border-4">
+        <section className="relative flex flex-col items-center justify-center bg-[url('../assets/images/mobile-bg.png')] bg-cover bg-center w-full md:w-1/2 p-4 md:p-8">
 
           {/* Header */}
           <header className="relative mb-4 w-9/10">
@@ -79,7 +79,7 @@ const Signup = () => {
           {/* Form Section */}
           <section className="mt-2 flex flex-col items-center justify-center w-9/10 ">
             <form
-              className="w-full flex flex-col mb-2 gap-2 p-1  bg-white rounded-lg items-center "
+              className="w-full flex flex-col mb-2 gap-2 p-2 bg-white rounded-lg items-center "
 
             >
               <TextField
@@ -89,7 +89,7 @@ const Signup = () => {
                 value={name}
                 onChange={handleNameChange}
                 name="name"
-
+                fullWidth
               />
               <TextField
                 id="email"
@@ -98,6 +98,7 @@ const Signup = () => {
                 value={email}
                 onChange={handleEmailChange}
                 name="email"
+                fullWidth
               />
               <TextField
                 id="password"
@@ -106,6 +107,7 @@ const Signup = () => {
                 value={password}
                 onChange={handlePassChange}
                 name="password"
+                fullWidth
               />
             </form>
             <button

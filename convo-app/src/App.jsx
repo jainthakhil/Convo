@@ -17,17 +17,11 @@ import Login from './authentication/Login';
 import Signup from './authentication/Signup'
 
 import { useSelector } from 'react-redux';
-// import ReplyShape from './components/ReplyShape'
-// import Chatbox from './components/Chatbox'
-// import Sidebar from './components/Sidebar'
-// import Signup from './authentication/Signup'
-// import Login from './authentication/Login'
-// import ForgotPassword from './authentication/ForgotPassword'
 
 const App = () => {
   const navigate = useNavigate();
 
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.user.user); // Get entire user object
 
   useEffect(() => {
     if (user && user.uid) {
@@ -39,7 +33,6 @@ const App = () => {
     // } else {
     //   navigate(`/${user.uid}`); // Redirect to main chat page if logged in
     // }
-    console.log(user)
   }, [user, navigate]);
 
   return (
@@ -54,8 +47,6 @@ const App = () => {
         <Route path='/:uid' element={<MainChatPage />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-
-
       {/* <Sidebar />
         <Chatbox /> */}
 
