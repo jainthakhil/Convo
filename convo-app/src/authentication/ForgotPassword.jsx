@@ -14,9 +14,15 @@ import mobileBg from "../assets/images/mobile-bg.png";
 import logo from "../assets/images/convo-logo.png";
 import hand from "../assets/images/hand.png";
 import forgotImg from "../assets/images/forgot-img.png";
-
-import Box from "@mui/material/Box";
+import laptopBg from "../assets/images/laptop-bg.png";
+import hand from "../assets/images/hand.png";
 import TextField from "@mui/material/TextField";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../firebase/firebase"; // adjust path if needed
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
