@@ -16,7 +16,7 @@ import Home from './pages/Home';
 import Login from './authentication/Login';
 import Signup from './authentication/Signup'
 
-import { logOut } from "./firebase/firebase";
+// import { logOut } from "./firebase/firebase";
 
 import { useSelector } from 'react-redux';
 
@@ -29,12 +29,13 @@ const App = () => {
     if (user && user.uid) {
       navigate(`/${user.uid}`);
     }
-    else {
-      logOut();
-      navigate('/signin')
+
+    // else {
+    //   logOut();
+    //   navigate('/signin')
 
 
-    }
+    // }
     // if (!user) {
     //   navigate('/signin'); // Redirect to login if not authenticated
     // } else {
