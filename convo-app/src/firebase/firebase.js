@@ -93,3 +93,5 @@ export const logOut = async () => {
     console.error("Logout error:", error.message);
   }
 };
+
+export { auth, provider };

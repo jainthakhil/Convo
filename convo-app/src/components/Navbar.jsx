@@ -42,7 +42,6 @@ const Navbar = (img, name) => {
                     Logout
                 </button>
                 <span>{userName || "User"}</span>
-
                 <ProfilePicture img={userDP} border="border-gray-400" />
             </div>
         </nav>

@@ -15,8 +15,11 @@ import MainChatPage from './pages/MainChatPage';
 import Home from './pages/Home';
 import Login from './authentication/Login';
 import Signup from './authentication/Signup'
+import ForgotPassword from './authentication/ForgotPassword';
 
 import { useSelector } from 'react-redux';
+
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const navigate = useNavigate();
@@ -44,12 +47,23 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path='/:uid' element={<MainChatPage />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
       {/* <Sidebar />
         <Chatbox /> */}
-
+       <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
 
     </div>
 
