@@ -1,13 +1,20 @@
-import React from "react";
-
-import mobileBg from "../assets/images/mobile-bg.png";
-import logo from "../assets/images/convo-logo.png";
-import hand from "../assets/images/hand.png";
+import React, { useState } from "react";
 import signupImg from "../assets/images/signup-img.png";
-import laptopBg from '../assets/images/laptop-bg.png';
-
-import Box from "@mui/material/Box";
+import laptopBg from "../assets/images/laptop-bg.png";
+import hand from "../assets/images/hand.png";
 import TextField from "@mui/material/TextField";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/features/userSlice";
+import { signupEmailPass, updateUserName } from "../firebase/firebase";
+
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+import { motion } from "framer-motion";
 
 const Signup = () => {
   const dispatch = useDispatch();
