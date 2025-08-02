@@ -15,10 +15,11 @@ import MainChatPage from './pages/MainChatPage';
 import Home from './pages/Home';
 import Login from './authentication/Login';
 import Signup from './authentication/Signup'
-
-// import { logOut } from "./firebase/firebase";
+import ForgotPassword from './authentication/ForgotPassword';
 
 import { useSelector } from 'react-redux';
+
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const navigate = useNavigate();
@@ -27,32 +28,17 @@ const App = () => {
 
   useEffect(() => {
     if (user && user.uid) {
+      navigate()
       navigate(`/${user.uid}`);
     }
-
-    // else {
-    //   logOut();
-    //   navigate('/signin')
-
-
-    // }
     // if (!user) {
     //   navigate('/signin'); // Redirect to login if not authenticated
     // } else {
     //   navigate(`/${user.uid}`); // Redirect to main chat page if logged in
     // }
-    console.log(user)
   }, [user, navigate]);
 
   return (
-
-
-
-
-
-
-
-
     <div className='app h-screen w-full'>
       {/* <ForgotPassword/> */}
       {/* <Login/> */}
@@ -61,14 +47,23 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path='/:uid' element={<MainChatPage />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-
-
       {/* <Sidebar />
         <Chatbox /> */}
-
+       <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
 
     </div>
 

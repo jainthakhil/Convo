@@ -28,3 +28,33 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;    /* Firefox */
 }
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+body, html {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes smoothWave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(15deg); }
+  80% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hand-wave {
+  animation: smoothWave 1.5s ease-in-out infinite;
+  transform-origin: right left;
+}
+
